@@ -1,0 +1,80 @@
+html,
+body,
+header,
+.jarallax {
+  height: 700px;
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .jarallax {
+    height: 100vh;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+  html,
+  body,
+  header,
+  .jarallax {
+    height: 100vh;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 650px) {
+  header .jarallax h1 {
+    margin-bottom: .5rem !important;
+  }
+  header .jarallax h5 {
+    margin-bottom: .5rem !important;
+  }
+}
+
+@media (min-width: 660px) and (max-width: 700px) {
+  header .jarallax h1 {
+    margin-bottom: 1.5rem !important;
+  }
+  header .jarallax h5 {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+.top-nav-collapse {
+  background-color: #7283A7 !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+@media (max-width: 768px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #7283A7 !important;
+  }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+    .navbar:not(.top-nav-collapse) {
+        background: #7283A7!important;
+    }
+}
+
+footer.page-footer {
+  background-color: #383838;
+}
+
+@media (max-width: 450px) {
+  .display-3 {
+    font-size: 3rem;
+  }
+}
+.shad{
+  text-shadow:
+    2px 2px 5px black,
+    /* .1em -.1em 0 white, */
+
+    1.5em .4em 10vw white,
+    0 0 8vw white;
+
+}
