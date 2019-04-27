@@ -8,11 +8,13 @@ import {MatSidenavModule, MatIconModule} from '@angular/material';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgwWowModule } from 'ngx-wow';
 import { MapPageComponent } from './map-page/map-page.component';
+import { AboutPageComponent } from './about-page/about-page.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    MapPageComponent
+    MapPageComponent,
+    AboutPageComponent
   ],
   imports: [
     BrowserModule,
