@@ -14,10 +14,15 @@ import { CartsComponent } from './carts/carts.component';
 import { AdminComponent } from './admin/admin.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertsComponent } from './alerts/alerts.component';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { fakeBackendProvider } from './_helpers/fake-backend';
+import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
+import { ShopComponent } from './shop/shop.component';
+import {MatButtonModule, MatSnackBarModule} from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,14 +32,21 @@ import { fakeBackendProvider } from './_helpers/fake-backend';
     LoginComponent,
     CartsComponent,
     AdminComponent,
-    AlertsComponent
+    AlertsComponent,
+    RegisterComponent,
+    ShopComponent
   ],
   imports: [
+    MatButtonModule,
+    MatSnackBarModule,
     HttpClientModule,
     BrowserModule,
+    NgbModule,
     RouterModule,
     NgwWowModule,
+    FormsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     MDBBootstrapModule.forRoot(),
     NavbarModule,
     WavesModule,

@@ -20,24 +20,31 @@
             <a class="nav-link" href="/map">Map</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="/shop">Shop</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/about">About</a>
           </li>
         </ul>
-        <form class="form-inline waves-light" mdbWavesEffect>
+       <form class="form-inline waves-light" mdbWavesEffect>
+
           <div class="md-form my-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="&#xF002; Search" style="font-family:Arial, FontAwesome; margin-right: 10px">
-              <i class="material-icons" style="color:white;font-size: 35px;">
+
+              <input class="form-control mr-sm-2" type="text" placeholder="&#xF002; Search" style="font-family:Arial, FontAwesome; ">
+              <i class="material-icons" style="color:white;font-size: 35px; margin-left: 30px;">
                 <a href="/carts"><mat-icon>local_grocery_store</mat-icon></a>
              </i>
+
              <i class="material-icons" style="color:white;font-size: 35px;">
               <a href="/login"><mat-icon>account_box</mat-icon></a>
               </i>
+              <i class="material-icons" style="color:white;font-size: 35px;">
+                  <a  (click)="logout()"><mat-icon>exit_to_app</mat-icon></a>
+                  </i>
             </div>
         </form>
       </div>
     </div>
   </nav>
 <router-outlet></router-outlet>
+

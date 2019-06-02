@@ -1,4 +1,9 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { User } from '../Model/User';
+import { Subscription } from 'rxjs';
+import { AuthenticationService } from '../service/authentication.service';
+import { UserService } from '../service/user.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home-page',
@@ -7,11 +12,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-
   constructor() {
   }
-  ngOnInit() {
-  }
-
-
+  ngOnInit() {}
 }
