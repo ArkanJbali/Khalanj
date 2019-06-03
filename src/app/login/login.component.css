@@ -1,0 +1,13 @@
+.headers{
+    padding:7%;
+  }
+  .headers h1{
+    font-family: Stencil Std, fantasy;
+    font-size: 60px;
+    border-bottom: 3px solid #FF1493;
+    width: 25%;
+  }
+
+
+
+  a { color: inherit; }

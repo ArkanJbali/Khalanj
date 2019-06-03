@@ -34,12 +34,11 @@ ngOnInit() {
         username: ['', Validators.required],
         password: ['', Validators.required]
     });
-
     // reset login status
     this.authenticationService.logout();
 
     // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
 }
 
 // convenience getter for easy access to form fields
@@ -59,7 +58,7 @@ onSubmit() {
         .subscribe(
             data => {
                this.alertService.success('Login successful', true);
-               setTimeout(()=>{
+               setTimeout(() => {
                   this.router.navigate([this.returnUrl]);
                 },
                 2000);

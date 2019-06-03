@@ -12,6 +12,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { LoginComponent } from './login/login.component';
 import { CartsComponent } from './carts/carts.component';
 import { AdminComponent } from './admin/admin.component';
+import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -38,6 +39,7 @@ import {MatButtonModule, MatSnackBarModule} from '@angular/material';
   ],
   imports: [
     MatButtonModule,
+    MatInputModule,
     MatSnackBarModule,
     HttpClientModule,
     BrowserModule,
