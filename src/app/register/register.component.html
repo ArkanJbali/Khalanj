@@ -2,41 +2,53 @@
   register works!
 </p>
 <app-alerts></app-alerts>
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="registerForm" (ngSubmit)="createOrUpdateUser()">
     <div class="container"  style="width: 50%;">
   <div class="form-group">
-      <label for="firstName">First Name</label>
-      <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName?.errors }" />
-      <div *ngIf="submitted && firstName?.errors" class="invalid-feedback">
-          <div *ngIf="f.firstName?.errors.required">First Name is required</div>
+      <label for="firstname">First Name</label>
+      <input type="text" formControlName="firstname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname?.errors }" />
+      <div *ngIf="submitted && !!f.firstname.errors" class="invalid-feedback">
+          <div *ngIf="!!f.firstname.errors.required">First Name is required</div>
       </div>
   </div>
   <div class="form-group">
-      <label for="lastName">Last Name</label>
-      <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-          <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+      <label for="lastname">Last Name</label>
+      <input type="text" formControlName="lastname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" />
+      <div *ngIf="submitted && !!f.lastname.errors" class="invalid-feedback">
+          <div *ngIf="!!f.lastname.errors.required">Last Name is required</div>
       </div>
   </div>
   <div class="form-group">
       <label for="username">Username</label>
       <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-      <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-          <div *ngIf="f.username.errors.required">Username is required</div>
+      <div *ngIf="submitted && !!f.username.errors" class="invalid-feedback">
+          <div *ngIf="!!f.username.errors.required">Username is required</div>
       </div>
   </div>
   <div class="form-group">
       <label for="password">Password</label>
       <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-          <div *ngIf="f.password.errors.required">Password is required</div>
-          <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+      <div *ngIf="submitted && !!f.password.errors" class="invalid-feedback">
+          <div *ngIf="!!f.password.errors.required">Password is required</div>
+          <div *ngIf="!!f.password.errors.minlength">Password must be at least 6 characters</div>
       </div>
   </div>
   <div class="form-group">
-      <button [disabled]="loading" class="btn btn-primary">Register</button>
-      <img *ngIf="loading" class="pl-3" />
-      <a href="/login" class="btn btn-link">Cancel</a>
+
+      <div class="form-group" align="center">
+        <p>
+          <button [disabled]="loading" class="btn btn-full btn-primary" style="width:98%;">Register</button>
+          <img *ngIf="loading" class="pl-3"  />
+        </p>
+
+        <p>
+          <a href="/login" class="btn btn-link">Cancel</a>
+        </p>
+        <p>
+            <a href="/home" class="btn btn-link">Return to Store</a>
+        </p>
+
+      </div>
   </div>
 </div>
 </form>

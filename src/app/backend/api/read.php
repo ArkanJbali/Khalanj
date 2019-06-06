@@ -4,21 +4,23 @@
  */
 require 'database.php';
 
-$policies = [];
-$sql = "SELECT id, number, amount FROM policies";
+$users = [];
+$sql = "SELECT id, firstname, lastname, username, password FROM users";
 
 if($result = mysqli_query($con,$sql))
 {
   $i = 0;
   while($row = mysqli_fetch_assoc($result))
   {
-    $policies[$i]['id']    = $row['id'];
-    $policies[$i]['number'] = $row['number'];
-    $policies[$i]['amount'] = $row['amount'];
+    $users[$i]['id']    = $row['id'];
+    $users[$i]['firstname'] = $row['firstname'];
+    $users[$i]['lastname'] = $row['lastname'];
+    $users[$i]['username'] = $row['username'];
+    $users[$i]['password'] = $row['password'];
     $i++;
   }
 
-  echo json_encode($policies);
+  echo json_encode($users);
 }
 else
 {

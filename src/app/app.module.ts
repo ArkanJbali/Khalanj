@@ -4,8 +4,8 @@ import { NavbarModule, WavesModule, ButtonsModule, MDBBootstrapModule } from 'an
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import {MatSidenavModule, MatIconModule} from '@angular/material';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatSidenavModule, MatIconModule, MatDialogModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgwWowModule } from 'ngx-wow';
 import { MapPageComponent } from './map-page/map-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
@@ -14,6 +14,7 @@ import { CartsComponent } from './carts/carts.component';
 import { AdminComponent } from './admin/admin.component';
 import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertsComponent } from './alerts/alerts.component';
@@ -24,6 +25,7 @@ import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { ShopComponent } from './shop/shop.component';
 import {MatButtonModule, MatSnackBarModule} from '@angular/material';
+import { DialogAdminComponent } from './admin/dialog-admin/dialog-admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,14 +37,17 @@ import {MatButtonModule, MatSnackBarModule} from '@angular/material';
     AdminComponent,
     AlertsComponent,
     RegisterComponent,
-    ShopComponent
+    ShopComponent,
+    DialogAdminComponent
   ],
   imports: [
     MatButtonModule,
-    MatInputModule,
+    MatInputModule, MatDialogModule,
     MatSnackBarModule,
     HttpClientModule,
+    HttpModule,
     BrowserModule,
+    AppRoutingModule,
     NgbModule,
     RouterModule,
     NgwWowModule,

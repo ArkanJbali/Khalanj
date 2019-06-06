@@ -20,7 +20,7 @@ export class ShopComponent implements OnInit {
                 this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
                   this.currentUser = user;
               });
-                console.log( this.CheckUser = this.currentUser.firstName);
+                console.log( this.CheckUser = this.currentUser.firstname);
                }
 
                ngOnInit() {

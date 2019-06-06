@@ -38,10 +38,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     // route functions
 
     function register() {
-        const user = body
+        const user = body;
 
         if (users.find(x => x.username === user.username)) {
-            return error('Username "' + user.username + '" is already taken')
+            return error('Username "' + user.username + '" is already taken');
         }
 
         user.id = users.length ? Math.max(...users.map(x => x.id)) + 1 : 1;
@@ -54,30 +54,40 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     function authenticate() {
         const { username, password } = body;
         const user = users.find(x => x.username === username && x.password === password);
-        if (!user) return error('Username or password is incorrect');
+        console.log(user, 'sssss');
+        if (!user) { return error('Username or password is incorrect'); }
+        console.log(ok({
+          id: user.id,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          username: user.username,
+          password: user.password,
+          token: 'fake-jwt-token'
+      }));
         return ok({
             id: user.id,
             username: user.username,
             firstName: user.firstName,
             lastName: user.lastName,
+            password: user.password,
             token: 'fake-jwt-token'
-        })
+        });
     }
 
     function getUsers() {
-        if (!isLoggedIn()) return unauthorized();
+        if (!isLoggedIn()) { return unauthorized(); }
         return ok(users);
     }
 
     function getUserById() {
-        if (!isLoggedIn()) return unauthorized();
+        if (!isLoggedIn()) { return unauthorized(); }
 
-        const user = users.find(x => x.id == idFromUrl());
+        const user = users.find(x => x.id === idFromUrl());
         return ok(user);
     }
 
     function deleteUser() {
-        if (!isLoggedIn()) return unauthorized();
+        if (!isLoggedIn()) { return unauthorized(); }
 
         users = users.filter(x => x.id !== idFromUrl());
         localStorage.setItem('users', JSON.stringify(users));
@@ -86,8 +96,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
     // helper functions
 
-    function ok(body?) {
-        return of(new HttpResponse({ status: 200, body }))
+    function ok(body?: { id: any; firstName: any; lastName: any; username: any; password: any; token: string; }) {
+        return of(new HttpResponse({ status: 200, body }));
     }
 
     function unauthorized() {

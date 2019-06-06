@@ -1,3 +1,44 @@
-<p>
-  admin works!
+<p style="margin-top: 8%;">
+
 </p>
+<h1>Users Management</h1>
+<div>
+
+  <table border='1' width='100%' style='border-collapse: collapse;'>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>User Name</th>
+      <th>Password</th>
+      <th>Operations</th>
+    </tr>
+
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.firstname }}</td>
+      <td>{{ user.lastname }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.password }}</td>
+      <td>
+        <button (click)="deleteUser(user.id)">Delete</button>
+        <button (click)="selectUser(user)">Update</button>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <form #f = "ngForm" style="width:30%;">
+    <label>FirstName</label>
+    <input type="text" name="firstname" [(ngModel)] = "selectedUser.firstname">
+    <br>
+    <label>LastName</label>
+    <input type="text" name="lastname" [(ngModel)] = "selectedUser.lastname">
+    <br>
+    <label>UserName</label>
+    <input type="text" name="username" [(ngModel)] = "selectedUser.username">
+    <br>
+    <label>Password</label>
+    <input type="text" name="password" [(ngModel)] = "selectedUser.password">
+    <br>
+    <input type="button" (click)="createOrUpdateUser(f)" value="Create or Update User">
+  </form>

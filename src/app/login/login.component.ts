@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
+  password: string;
+  username: string;
   error: any;
   constructor(
     private formBuilder: FormBuilder,
@@ -53,28 +55,25 @@ onSubmit() {
     }
 
     this.loading = true;
-    this.authenticationService.login(this.f.username.value, this.f.password.value)
+    this.authenticationService.login2(this.f.username.value, this.f.password.value)
         .pipe(first())
         .subscribe(
             data => {
+              if ( data.username === this.username && data.password === this.password ) {
                this.alertService.success('Login successful', true);
-               setTimeout(() => {
-                  this.router.navigate([this.returnUrl]);
-                },
-                2000);
+               console.log('inside login.ts: ', data);
+            }
+              //  setTimeout(() => {
+              //     this.router.navigate([this.returnUrl]);
+              //   },
+              //   2000);
 
             },
             error => {
-                this.alertService.error(error);
+                this.alertService.error('Invalid Username or Password !');
                 this.error = error;
                 this.loading = false;
             });
 }
-  loginUser(event) {
-    event.preventDefault();
-    const target = event.target;
-    const username = target.querySelector('#username').value;
-    const password = target.querySelector('#password').value;
-    console.log(username, password);
-  }
+
 }
