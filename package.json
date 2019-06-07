@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~8.0.0",
     "@angular/router": "~8.0.0",
     "@ng-bootstrap/ng-bootstrap": "^4.2.0",
+    "@types/jquery": "^3.3.29",
     "angular-bootstrap-md": "^7.5.0",
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^4.3.1",

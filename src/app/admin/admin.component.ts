@@ -3,6 +3,8 @@ import { ApiService } from '../service/api.service';
 import { User } from '../Model/User';
 import { AlertService } from '../service/alert.service';
 import { first } from 'rxjs/operators';
+import { AuthenticationService } from '../service/authentication.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -11,13 +13,27 @@ import { first } from 'rxjs/operators';
 export class AdminComponent implements OnInit {
     users: User[];
     selectedUser: User  = { id :  null , firstname: null, lastname: null, username: null, password: null};
-  constructor(private apiService: ApiService,
-              private alertService: AlertService) { }
+  currentUserSubscription: any;
+  currentUser: User;
+  s = '';
+  constructor(private authenticationService: AuthenticationService,
+              private apiService: ApiService,
+              private router: Router,
+              private alertService: AlertService) {
+                this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
+                  if (user === null) {
+                    this.router.navigate(['/']);
+                  } else {
+                  this.currentUser = user[0];
+                  this.s = this.currentUser.firstname;
+                  }
+              });
+               }
 
   ngOnInit() {
     this.apiService.readUser().subscribe((users: User[]) => {
       this.users = users;
-      console.log("Users Read Work DB");
+      console.log('Users Read Work DB');
     });
   }
   createOrUpdateUser(form) {
@@ -52,7 +68,7 @@ export class AdminComponent implements OnInit {
   deleteUser(id) {
     this.apiService.deleteUser(id).subscribe((user: User) => {
       this.alertService.success('Delete successful', true);
-      console.log("User deleted, " , user);
+      console.log('User deleted, ' , user);
       setTimeout(() => {
         window.location.reload();
       },

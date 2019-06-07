@@ -19,16 +19,15 @@ export class AuthenticationService {
         return this.currentUserSubject.value;
     }
     login(user: User): Observable<User> {
-      return  this.http.post<User>(`${this.PHP_API_SERVER}/api/read.php`, user)
+      return  this.http.post<User>(`${this.PHP_API_SERVER}/api/login.php`, user)
           .pipe(map(data => {
               // login successful if there's a jwt token in the response
-              if (data && data.token) {
+              if (data[0] && data[0].token) {
                   // store user details and jwt token in local storage to keep user logged in between page refreshes
                   localStorage.setItem('currentUser', JSON.stringify(data));
                   this.currentUserSubject.next(data);
-                  console.log(user, ' inside authentication service');
+                  console.log(data, ' get user from DB work');
               }
-              console.log(user, ' inside authentication service');
               return data;
           }));
   }
@@ -40,8 +39,8 @@ export class AuthenticationService {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user));
                     this.currentUserSubject.next(user);
+                    console.log(user, ' inside authentication service');
                 }
-                console.log(user, ' inside authentication service');
                 return user;
             }));
     }

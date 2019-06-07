@@ -26,6 +26,8 @@ import { RegisterComponent } from './register/register.component';
 import { ShopComponent } from './shop/shop.component';
 import {MatButtonModule, MatSnackBarModule} from '@angular/material';
 import { DialogAdminComponent } from './admin/dialog-admin/dialog-admin.component';
+import { ProductComponent } from './product/product.component';
+import { ShopListComponent } from './shop-list/shop-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,9 @@ import { DialogAdminComponent } from './admin/dialog-admin/dialog-admin.componen
     AlertsComponent,
     RegisterComponent,
     ShopComponent,
-    DialogAdminComponent
+    DialogAdminComponent,
+    ProductComponent,
+    ShopListComponent
   ],
   imports: [
     MatButtonModule,

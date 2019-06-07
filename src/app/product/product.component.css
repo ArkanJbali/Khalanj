@@ -1,0 +1,59 @@
+/* div{
+  border-style: solid;
+} */
+a { color: inherit; }
+.headers h6{
+  font-family: Stencil Std, fantasy;
+  font-size: 15px;
+  border-bottom: 1px solid #FF1493;
+  margin-bottom: 5px;
+  width: 20%;
+}
+.headers h4{
+  font-family: Stencil Std, fantasy;
+  color: rgb(72, 141, 219);
+  font-size: 30px;
+}
+.headers h5{
+  color: rgb(155, 155, 156);
+  font-size: 15px;
+}
+img:hover{
+  filter: brightness(0.85);
+  cursor: zoom-in;
+}
+ul {
+  margin-left: 30%;
+  padding: 0;
+  clear: both;
+}
+
+li{
+  list-style-type: none;
+  list-style-position: outside;
+  padding: 10px;
+  float: left;
+}
+
+input[type="checkbox"]:not(:checked),
+input[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999%;
+}
+
+input[type="checkbox"] + label {
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid rgb(72, 141, 219);
+  color: rgb(72, 141, 219);
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+input[type="checkbox"]:checked + label {
+  border: 1px solid rgb(72, 141, 219);
+  color: rgb(7, 86, 177);
+  font-weight: bold;
+  background-color: rgb(231, 202, 202);
+}

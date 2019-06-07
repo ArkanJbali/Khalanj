@@ -55,18 +55,15 @@ onSubmit() {
     }
 
     this.loading = true;
-    this.authenticationService.login2(this.f.username.value, this.f.password.value)
+    this.authenticationService.login(this.loginForm.value)
         .pipe(first())
         .subscribe(
             data => {
-              if ( data.username === this.username && data.password === this.password ) {
                this.alertService.success('Login successful', true);
-               console.log('inside login.ts: ', data);
-            }
-              //  setTimeout(() => {
-              //     this.router.navigate([this.returnUrl]);
-              //   },
-              //   2000);
+               setTimeout(() => {
+                  this.router.navigate([this.returnUrl]);
+                },
+                2000);
 
             },
             error => {
