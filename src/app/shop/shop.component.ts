@@ -15,12 +15,12 @@ export class ShopComponent implements OnInit {
   currentUserSubscription: Subscription;
   users: User[] = [];
   CheckUser = 's';
+  category = '';
   constructor(private authenticationService: AuthenticationService,
               private userService: UserService) {
                 this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
                   this.currentUser = user[0];
               });
-                console.log( this.CheckUser = this.currentUser.firstname);
                 this.CheckUser = this.currentUser.firstname;
                }
 
@@ -28,5 +28,14 @@ export class ShopComponent implements OnInit {
 
               }
 
-
+    categoryName(cat) {
+      this.category = cat;
+      this.scrollWin();
+    }
+    scrollWin() {
+      window.scrollBy(0, 300);
+    }
+    scrollUp() {
+      window.scrollTo(0, 0);
+    }
 }

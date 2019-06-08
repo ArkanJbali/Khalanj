@@ -1,4 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { MatTableModule, MatSortModule, MatCardModule, MatPaginatorModule,
+  MatGridListModule, MatFormFieldModule,
+  MatRadioModule,  MatSelectModule, MatToolbarModule,  MatStepperModule} from '@angular/material';
 import { NgModule } from '@angular/core';
 import { NavbarModule, WavesModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppRoutingModule } from './app-routing.module';
@@ -50,6 +53,9 @@ import { ShopListComponent } from './shop-list/shop-list.component';
     MatSnackBarModule,
     HttpClientModule,
     HttpModule,
+    MatTableModule, MatSortModule, MatCardModule, MatPaginatorModule,
+  MatGridListModule, MatFormFieldModule,
+  MatRadioModule,  MatSelectModule, MatToolbarModule,  MatStepperModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,

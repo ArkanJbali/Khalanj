@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   loading = false;
   submitted = false;
   users: User[];
-  selectedUser: User  = { id :  null , firstname: null, lastname: null, username: null, password: null};
+  selectedUser: User;
   constructor(
       private formBuilder: FormBuilder,
       private router: Router,
@@ -37,6 +37,8 @@ export class RegisterComponent implements OnInit {
       this.registerForm = this.formBuilder.group({
           firstname: ['', Validators.required],
           lastname: ['', Validators.required],
+          email: ['', Validators.required],
+          phone: ['', Validators.required],
           username: ['', Validators.required],
           password: ['', [Validators.required, Validators.minLength(6)]]
       });

@@ -3,9 +3,11 @@
   }
   .headers h1{
     font-family: Stencil Std, fantasy;
-    font-size: 60px;
-    border-bottom: 3px solid #FF1493;
-    width: 25%;
+    font-size: 30px;
+    border-bottom: 1px solid rgb(155, 155, 156);
+    margin-bottom: 5px;
+    color: rgb(72, 141, 219);
+    width: 20%;
   }
 
 

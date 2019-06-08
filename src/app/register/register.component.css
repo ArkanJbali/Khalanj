@@ -1,0 +1,8 @@
+.headers h6{
+  font-family: Stencil Std, fantasy;
+  font-size: 30px;
+  border-bottom: 1px solid rgb(155, 155, 156);
+  margin-bottom: 5px;
+  color: rgb(72, 141, 219);
+  width: 20%;
+}

@@ -1,3 +1,50 @@
-<p>
-  shop-list works!
+<p style="margin-top: 10%;">
+
 </p>
+<div *ngIf="_catTitle != ''"  align="center" class="headers">
+  <h6>{{catTitle}} Collection</h6>
+</div>
+<br>
+
+   <mat-card *ngIf="_catTitle != ''" >
+        <div>
+            <strong style="font-size: 20px;">Actions Log</strong>
+        </div>
+
+        <mat-table #table [dataSource]="products" matSort class='table'>
+        <ng-container matColumnDef="items">
+          <mat-header-cell *matHeaderCellDef  mat-sort-header>Items:</mat-header-cell>
+          <mat-cell *matCellDef="let e">{{e.productid}} <br> {{e.productname}}</mat-cell>
+        </ng-container>
+
+          <ng-container matColumnDef="edit">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <span *ngIf= " havePermission ">
+              <button mat-icon-button (click)="onEdit(row)"><mat-icon>launch</mat-icon></button>
+            </span>
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="loading">
+            <mat-footer-cell *matFooterCellDef colspan="6">
+              Loading Data...
+            </mat-footer-cell>
+          </ng-container>
+          <ng-container matColumnDef="noData">
+            <mat-footer-cell *matFooterCellDef colspan="6">
+              No Data.
+            </mat-footer-cell>
+          </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
+        <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+          <!-- <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':_catTitle===null}">
+          </mat-footer-row> -->
+          <!-- <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(_catTitle!=null && _catTitle.data.length==0)}">
+          </mat-footer-row> -->
+      </mat-table>
+
+     <mat-paginator   [pageSize]="5" [pageSizeOptions]="[3, 5, 10]">
+      </mat-paginator>
+
+
+  </mat-card>

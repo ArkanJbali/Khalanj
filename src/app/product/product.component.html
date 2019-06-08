@@ -4,11 +4,11 @@
 <div class="container">
   <div class="row" style="margin: 10px;">
     <div class="col mdb-lightbox"><img class="img-fluid" src="./assets/clothesAd.jpg" width="100%"></div>
-    <div class="col headers" align="center">
+    <div class="col headers" align="center" *ngFor="let product of products">
       <h6>Khalanj Shop</h6>
-      <h4>Product Name</h4>
-      <h4>Category</h4>
-      <h5>Price</h5>
+      <h4>{{product.productname}}</h4>
+      <h4>{{product.categoryname}}</h4>
+      <h5>{{product.price}}</h5>
       <h5>Tax Included</h5>
       <hr>
       <h5>Color</h5>

@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
     users: User[];
-    selectedUser: User  = { id :  null , firstname: null, lastname: null, username: null, password: null};
+    selectedUser: User  = { id :  null , firstname: null, lastname: null, email: null, phone: null, username: null, password: null};
   currentUserSubscription: any;
   currentUser: User;
   s = '';
@@ -37,16 +37,14 @@ export class AdminComponent implements OnInit {
     });
   }
   createOrUpdateUser(form) {
-
-
-    console.log(form.value);
-
-
     if (this.selectedUser && this.selectedUser.id) {
       form.value.id = this.selectedUser.id;
       this.apiService.updateUser(form.value).pipe(first()).subscribe((user: User) => {
         this.alertService.success('Update successful', true);
-
+        setTimeout(() => {
+          window.location.reload();
+        },
+        1500);
       },
       error => {
           this.alertService.error(error + 'Update failed');
@@ -72,7 +70,7 @@ export class AdminComponent implements OnInit {
       setTimeout(() => {
         window.location.reload();
       },
-      2000);
+      1500);
 
     });
   }

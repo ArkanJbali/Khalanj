@@ -1,3 +1,4 @@
+import { ShopListComponent } from './shop-list/shop-list.component';
 import { ProductComponent } from './product/product.component';
 import { AdminComponent } from './admin/admin.component';
 import { ShopComponent } from './shop/shop.component';
@@ -22,6 +23,7 @@ const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
 { path: 'register', component: RegisterComponent },
 { path: '', component: HomePageComponent },
 { path: 'shop', component: ShopComponent, canActivate: [AuthGuard] },
+{ path: 'shoplist', component: ShopListComponent },
 { path: '**', redirectTo: 'HomePageComponent' }];
 
 @NgModule({

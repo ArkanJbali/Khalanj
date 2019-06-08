@@ -10,6 +10,8 @@
       <th>ID</th>
       <th>First Name</th>
       <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone</th>
       <th>User Name</th>
       <th>Password</th>
       <th>Operations</th>
@@ -19,6 +21,8 @@
       <td>{{ user.id }}</td>
       <td>{{ user.firstname }}</td>
       <td>{{ user.lastname }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.phone }}</td>
       <td>{{ user.username }}</td>
       <td>{{ user.password }}</td>
       <td>
@@ -28,12 +32,19 @@
     </tr>
   </table>
   <br>
+  <app-alerts></app-alerts>
   <form #f = "ngForm" style="width:30%;">
     <label>FirstName</label>
     <input type="text" name="firstname" [(ngModel)] = "selectedUser.firstname">
     <br>
     <label>LastName</label>
     <input type="text" name="lastname" [(ngModel)] = "selectedUser.lastname">
+    <br>
+    <label>Email</label>
+    <input type="text" name="email" [(ngModel)] = "selectedUser.email">
+    <br>
+    <label>Phone</label>
+    <input type="text" name="phone" [(ngModel)] = "selectedUser.phone">
     <br>
     <label>UserName</label>
     <input type="text" name="username" [(ngModel)] = "selectedUser.username">

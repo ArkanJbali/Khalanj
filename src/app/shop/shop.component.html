@@ -1,3 +1,96 @@
+<div align="center" class="headers" style="margin-top: 10%;">
+    <h1>Khalanj Shop</h1>
+  </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+<!-- Card -->
+<div class="card card-cascade wider reverse">
 
-    <h2 style="margin-top: 10%;">Hi {{CheckUser}}!</h2>
+  <!-- Card image -->
+  <div class="view view-cascade overlay">
+    <img class="card-img-top" src="../assets/women_cat.jpg" alt="Card image cap">
+    <a (click)="categoryName('Women')">
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body card-body-cascade text-center">
+
+    <!-- Title -->
+    <h4 class="card-title"><strong>Women</strong></h4>
+    <!-- Subtitle -->
+    <h6 class="font-weight-bold indigo-text py-2">Collection</h6>
+    <!-- Text -->
+    <p class="card-text">Women clothes is not just another category of shopping. It is the respect of each girl, woman and lady personality.
+    </p>
+
+    <a class="btn-floating" (click)="categoryName('Women')"><img src="../assets/right_arrow.png"></a>
+  </div>
+
+</div>
+        </div>
+
+        <div class="col">
+<!-- Card -->
+<div class="card card-cascade wider reverse">
+
+  <!-- Card image -->
+  <div class="view view-cascade overlay">
+    <img class="card-img-top" src="../assets/men_cat.jpg" alt="Card image cap">
+    <a (click)="categoryName('Men')">
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body card-body-cascade text-center">
+
+    <!-- Title -->
+    <h4 class="card-title"><strong>Men</strong></h4>
+    <!-- Subtitle -->
+    <h6 class="font-weight-bold indigo-text py-2">Collection</h6>
+    <!-- Text -->
+    <p class="card-text">Men always dress well, but they keep it simple.<br><br><br>
+    </p>
+
+    <a class="btn-floating" (click)="categoryName('Men')"><img src="../assets/right_arrow.png"></a>
+  </div>
+
+</div>
+        </div>
+
+        <div class="col">
+<!-- Card -->
+<div class="card card-cascade wider reverse">
+
+  <!-- Card image -->
+  <div class="view view-cascade overlay">
+    <img class="card-img-top" src="../assets/kids_cat.jpg" alt="Card image cap">
+    <a (click)="categoryName('Kids')">
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body card-body-cascade text-center">
+
+    <!-- Title -->
+    <h4 class="card-title"><strong>Kids</strong></h4>
+    <!-- Subtitle -->
+    <h6 class="font-weight-bold indigo-text py-2">Collection</h6>
+    <!-- Text -->
+    <p class="card-text">A category only for small angels.<br><br><br>
+    </p>
+
+    <a class="btn-floating" (click)="categoryName('Kids')"><img src="../assets/right_arrow.png"></a>
+  </div>
+
+</div>
+        </div>
+      </div>
+    </div>
+    <a style="position:fixed; right:0; margin: 1%" (click)="scrollUp();"> <img src="../assets/swipe_up.png"> </a>
+    <app-shop-list [catTitle]="category"></app-shop-list>
 
