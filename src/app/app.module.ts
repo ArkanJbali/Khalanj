@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { MatTableModule, MatSortModule, MatCardModule, MatPaginatorModule,
+import { MatTableModule, MatSortModule, MatCardModule,
   MatGridListModule, MatFormFieldModule,
   MatRadioModule,  MatSelectModule, MatToolbarModule,  MatStepperModule} from '@angular/material';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgModule } from '@angular/core';
 import { NavbarModule, WavesModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppRoutingModule } from './app-routing.module';

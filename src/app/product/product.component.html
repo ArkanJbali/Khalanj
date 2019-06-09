@@ -3,12 +3,15 @@
 </p>
 <div class="container">
   <div class="row" style="margin: 10px;">
-    <div class="col mdb-lightbox"><img class="img-fluid" src="./assets/clothesAd.jpg" width="100%"></div>
+    <div class="col mdb-lightbox">
+      <img class="img-fluid" src="data:image/jpeg;base64,{{_products.productimg}}" width="75%">
+    </div>
     <div class="col headers" align="center" *ngFor="let product of products">
       <h6>Khalanj Shop</h6>
       <h4>{{product.productname}}</h4>
       <h4>{{product.categoryname}}</h4>
-      <h5>{{product.price}}</h5>
+      <h5><span  class="price">{{product.price}} $ </span></h5>
+      <h5>Price: {{product.discount}} $</h5>
       <h5>Tax Included</h5>
       <hr>
       <h5>Color</h5>
@@ -33,7 +36,8 @@
             <label for="check_4">XL</label>
           </li>
         </ul>
-        <button class="btn btn-full btn-primary" style="width:70%;">Add to cart</button>
+        <button class="btn btn-full btn-outline-primary" style="width:70%;" (click)="addToCart();">Add to cart</button>
+        <button class="btn btn-full btn-primary" style="width:70%;" (click)="addToCart();">Buy It Now</button>
   </div>
 
   </div>

@@ -1,7 +1,7 @@
-export class shopProducts {
+export class Cart {
+  cartid: number;
   productid: number;
   productname: string;
-  categoryname: string;
   price: number;
   discount: number;
   stock: number;

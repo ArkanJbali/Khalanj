@@ -15,8 +15,8 @@
               <h5 class="text-uppercase mb-5 mt-1 font-weight-bold wow fadeInDown shad" style="color: rgb(248, 245, 150);" data-wow-delay="0.3s">A new
                 start for old clothes
               </h5>
-              <a class="btn btn-outline-white btn-lg wow fadeInDown" data-wow-delay="0.3s">Shop</a>
-              <a class="btn btn-white btn-lg wow fadeInDown" data-wow-delay="0.3s">Lookbook</a>
+              <a class="btn btn-outline-white btn-lg wow fadeInDown" data-wow-delay="0.3s" href="/shop">Shop</a>
+              <a class="btn btn-white btn-lg wow fadeInDown" data-wow-delay="0.3s" (click)="scrollWin();">Lookbook</a>
             </div>
           </div>
         </div>
@@ -29,7 +29,7 @@
 
 
 <!--Main Layout-->
-<main>
+<main style="margin-top: 5%;">
 
   <div class="container">
 
@@ -64,12 +64,12 @@
             <!--Card content-->
             <div class="card-body text-center no-padding">
               <!--Category & Title-->
-              <a href="" class="text-muted">
+              <a href="/shop" class="text-muted">
                 <h5>Blouse</h5>
               </a>
               <h4 class="card-title">
                 <strong>
-                  <a href="">White Blouse</a>
+                  <a href="/shop">White Blouse</a>
                 </strong>
               </h4>
 
@@ -106,7 +106,7 @@
 
             <!--Card image-->
             <div class="view overlay z-depth-1">
-              <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(37).jpg" class="card-img-top"
+              <img src="../assets/images/black_hat.jpg" class="card-img-top"
                 alt="">
               <a>
                 <div class="mask rgba-white-slight"></div>
@@ -117,12 +117,12 @@
             <!--Card content-->
             <div class="card-body text-center no-padding">
               <!--Category & Title-->
-              <a href="" class="text-muted">
+              <a href="/shop" class="text-muted">
                 <h5>Accessories</h5>
               </a>
               <h4 class="card-title">
                 <strong>
-                  <a href="">Black hat</a>
+                  <a href="/shop">Black hat</a>
                 </strong>
               </h4>
 
@@ -170,12 +170,12 @@
             <!--Card content-->
             <div class="card-body text-center no-padding">
               <!--Category & Title-->
-              <a href="" class="text-muted">
+              <a href="/shop" class="text-muted">
                 <h5>Sweatshirt</h5>
               </a>
               <h4 class="card-title">
                 <strong>
-                  <a href="">Flower sweatshirt</a>
+                  <a href="/shop">Flower sweatshirt</a>
                 </strong>
               </h4>
 
@@ -212,7 +212,7 @@
 
             <!--Card image-->
             <div class="view overlay z-depth-1">
-              <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(39).jpg" class="card-img-top"
+              <img src="../assets/images/jackets.jpg" class="card-img-top"
                 alt="">
               <a>
                 <div class="mask rgba-white-slight"></div>
@@ -223,12 +223,12 @@
             <!--Card content-->
             <div class="card-body text-center no-padding">
               <!--Category & Title-->
-              <a href="" class="text-muted">
+              <a href="/shop" class="text-muted">
                 <h5>Outwear</h5>
               </a>
               <h4 class="card-title">
                 <strong>
-                  <a href="">Denim jacket</a>
+                  <a href="/shop">Denim jacket</a>
                 </strong>
               </h4>
 
@@ -289,11 +289,9 @@
     <section class="text-center pb-5 wow fadeIn">
 
       <!--Section heading-->
-      <h2 class="font-weight-bold text-center h1 my-5">Explore Us</h2>
+      <h2 class="font-weight-bold text-center h1 my-5"></h2>
       <!--Section description-->
-      <p class="text-center grey-text mb-5 mx-auto w-responsive">Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p class="text-center grey-text mb-5 mx-auto w-responsive"></p>
 
       <!--Grid row-->
       <div class="row">
@@ -305,15 +303,15 @@
               <div>
                 <a href="" class="purple-text">
                   <h5>
-                    <i class="fa fa-plane pr-2"></i>Fashion week</h5>
+                      <i class="material-icons">
+                          monetization_on
+                          </i>
+                    Donate</h5>
                 </a>
                 <h3 class="mb-4 mt-4">
-                  <strong>Project title</strong>
+                  <strong></strong>
                 </h3>
-                <p>Fashion week Fashion week Fashion week Fashion week Fashion week Fashion week Fashion week
-                    Fashion week Fashion week
-                    Fashion week
-                    Fashion week.</p>
+                <p><span style="margin-left: 10%;"></span>"Never get tired of doing little things for others, sometimes those little things occupy the biggest parts of their hearts".</p>
                 <a class="btn btn-secondary btn-sm">
                   <i class="fa fa-clone left"></i> View</a>
               </div>
@@ -332,7 +330,7 @@
                     <i class="fa fa-camera pr-2"></i>Fashion news</h5>
                 </a>
                 <h3 class="mb-4 mt-4">
-                  <strong>Project title</strong>
+                  <strong></strong>
                 </h3>
                 <p>Fashion news.</p>
                 <a class="btn btn-pink btn-sm">
@@ -353,7 +351,7 @@
                     <i class="fa fa-eye pr-2"></i>Summer trends</h5>
                 </a>
                 <h3 class="mb-4 mt-4">
-                  <strong>Project title</strong>
+                  <strong></strong>
                 </h3>
                 <p>Summer trends.</p>
                 <a class="btn btn-success btn-sm">
@@ -375,111 +373,87 @@
 </main>
 <!--Main Layout-->
 
-<!--Footer-->
-<footer class="page-footer pt-4 mt-4 text-center text-md-left mdb-color lighten-2">
 
-  <!--Footer Links-->
-  <div class="container">
-    <div class="row">
+<section class="footer4 cid-roNJtbRXU9" id="footer4-e">
 
-      <!--First column-->
-      <div class="col-md-3 mr-auto">
-        <h5 class="text-uppercase mb-3">Footer Content</h5>
-        <p>Footer Content</p>
-      </div>
-      <!--/.First column-->
 
-      <hr class="w-100 clearfix d-md-none">
 
-      <!--Second column-->
-      <div class="col-md-2 ml-auto">
-        <h5 class="text-uppercase mb-3">Links</h5>
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-        </ul>
-      </div>
-      <!--/.Second column-->
 
-      <hr class="w-100 clearfix d-md-none">
 
-      <!--Third column-->
-      <div class="col-md-2 ml-auto">
-        <h5 class="text-uppercase mb-3">Links</h5>
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-        </ul>
-      </div>
-      <!--/.Third column-->
+    <div class="container">
+        <div class="media-container-row content mbr-white">
+            <div class="col-md-3 col-sm-4">
+                <div class="mb-3 img-logo">
+                    <a href="https://mobirise.co/">
+                        <img src="assets/images/logo-192x152.png" title="">
+                    </a>
+                </div>
+                <p class="mb-3 mbr-fonts-style foot-title display-7">
+                    Khalanj - Home</p>
+            </div>
 
-      <hr class="w-100 clearfix d-md-none">
+                <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                    <p class="mbr-text">
+                        <strong>Address</strong>
+                        <br>
+                        <br>1234 Street Name
+                        <br>City, AA 99999
+                        <br>
+                        <br>
+                        <br><strong>Contacts</strong>
+                        <br>
+                        <br>Email: support@mobirise.com
+                        <br>Phone: +1 (0) 000 0000 001
+                        <br>Fax: +1 (0) 000 0000 002
+                    </p>
 
-      <!--Fourth column-->
-      <div class="col-md-3 ml-auto">
-        <h5 class="text-uppercase mb-3">Links</h5>
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-        </ul>
-      </div>
-      <!--/.Fourth column-->
-
+            </div>
+            <div class="col-md-4 offset-md-1 col-sm-12">
+                <div class="col-12 col-md-6">
+                    <div class="google-map"><iframe frameborder="0" style="border:0" src="https://maps.google.com/maps?q=Taibe&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen=""></iframe></div>
+                </div>
+                <div class="social-list pl-0 mb-0">
+                        <div class="soc-item">
+                            <a href="https://twitter.com/mobirise" target="_blank">
+                                <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.youtube.com/" target="_blank">
+                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://instagram.com/" target="_blank">
+                                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://plus.google.com/" target="_blank">
+                                <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-lower">
+            <div class="media-container-row">
+                <div class="col-sm-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="media-container-row mbr-white">
+                <div class="col-sm-12 copyright">
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        © Copyright 2019 Khalanj - All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <!--/.Footer Links-->
-
-  <hr>
-
-  <!--Social buttons-->
-  <div class="social-section text-center">
-    <ul class="list-unstyled list-inline">
-
-      <li class="list-inline-item">
-        <a class="btn-floating btn-fb">
-          <i class="fa fa-facebook-f"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-          <a class="btn-floating btn-sm btn-tw" type="button" role="button"><i class="fa fa-twitter"></i></a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-gplus">
-          <i class="fa fa-google-plus-official"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-li">
-          <i class="fa fa-linkedin"> </i>
-        </a>
-      </li>
-
-    </ul>
-  </div>
-  <!--/.Social buttons-->
-
-  <!--Copyright-->
-  <div class="footer-copyright py-3 text-center">
-    <div class="container-fluid">
-      &copy; 2019 Copyright:
-      <a href="http://localhost:4200/home"> Khalanj.com </a>
-
-    </div>
-  </div>
-  <!--/.Copyright-->
-
-</footer>
-<!--/.Footer-->
-
+</section>

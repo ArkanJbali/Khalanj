@@ -22,7 +22,7 @@ const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
 { path: 'product', component: ProductComponent },
 { path: 'register', component: RegisterComponent },
 { path: '', component: HomePageComponent },
-{ path: 'shop', component: ShopComponent, canActivate: [AuthGuard] },
+{ path: 'shop', component: ShopComponent },
 { path: 'shoplist', component: ShopListComponent },
 { path: '**', redirectTo: 'HomePageComponent' }];
 

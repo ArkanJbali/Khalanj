@@ -3,6 +3,7 @@ export class getProduct {
   productname: string;
   categoryname: string;
   price: number;
+  discount: number;
   stock: number;
   productimg: Blob;
 }

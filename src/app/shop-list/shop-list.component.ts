@@ -1,7 +1,9 @@
+import { first } from 'rxjs/operators';
 import { ProductsService } from './../service/products.service';
 import { Component, OnInit, Input, ViewChild, SimpleChanges, SimpleChange } from '@angular/core';
-import { MatSort, MatPaginator, MatDialogConfig } from '@angular/material';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { shopProducts } from '../Model/shopProducts';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shop-list',
@@ -9,18 +11,18 @@ import { shopProducts } from '../Model/shopProducts';
   styleUrls: ['./shop-list.component.css']
 })
 export class ShopListComponent implements OnInit {
-  [x: string]: any;
- // @ViewChild(MatPaginator) paginator: MatPaginator;
+ @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
   @Input()
   catTitle: string;
    _catTitle: string;
-  displayedColumns = ['items','edit'];
+  displayedColumns = ['items', 'edit'];
 products: shopProducts[];
-
+_products;
 // Disable option -----------------------------------------------------------
 havePermission = true;
 keyid: string;
-  constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService,
+              private router: Router ) { }
 
   ngOnInit() {
   }
@@ -31,21 +33,41 @@ keyid: string;
     this._catTitle = catTitle.currentValue;
     this.read(this._catTitle);
   }
-  onEdit(row) {
-    console.log(row, '\n onEdit');
+  onPreview(row) {
+   this.productsService.updateData(row);
      // add to cart or preview
+   this.router.navigate(['/product']);
    }
    read(cat) {
-     if(cat != null) {
+     if (cat != null) {
     this.productsService.readShopProducts(cat)
     .subscribe(
       (data: shopProducts[]) => {
        this.products = data;
+       this._products = data[0];
       // console.log(data, 'Products Read Work DB');
+     //  this._products.paginator = this.paginator;
+       this._products = new MatTableDataSource(data);
+     //  console.log(this.paginator );
+     //  console.log(this._products );
       },
             error => {
               console.error(error, 'Products Read NOT Work DB');
             });
    }
+  }
+  addToCart(proid) {
+    // stop here if form is invalid if productid is null
+    if (proid === null || proid === undefined) {
+        return;
+    }
+
+    this.productsService.insertIntoCart(proid).pipe(first()).subscribe((data) => {
+
+    },
+    error => {
+     //   this.alertService.error(error + 'Insert to cart failed');
+     console.error("Error");
+    });
   }
 }

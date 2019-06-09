@@ -15,4 +15,8 @@ export class HomePageComponent implements OnInit {
   constructor() {
   }
   ngOnInit() {}
+
+  scrollWin() {
+    window.scrollBy(0, 700);
+  }
 }

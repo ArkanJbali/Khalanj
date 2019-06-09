@@ -1,0 +1,40 @@
+.headers h6{
+  font-family: Stencil Std, fantasy;
+  font-size: 30px;
+  border-bottom: 1px solid rgb(155, 155, 156);
+  margin-bottom: 5px;
+  color: rgb(72, 141, 219);
+  width: 20%;
+}
+mat-footer-row mat-footer-cell{
+  justify-content: center;
+  font-style: italic;
+
+}
+mat-cell {
+
+  text-align: left;
+}
+mat-header-cell {
+
+text-shadow: 1px 1px 1px #ece1e1;
+  font-size: 17px;
+}
+
+mat-card{
+   width: 80%;
+ /* border: 2px solid;*/
+  /* border-color:#C76BC0; */
+}
+mat-paginator{
+  float: left;
+
+}
+.totalTxt{
+  size: 20px;
+  font-weight: bold;
+}
+.taxTxt{
+  color: rgb(155, 155, 156);
+  size: 20px;
+}

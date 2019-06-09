@@ -1,11 +1,11 @@
 <?php
 /**
- * Returns the list of policies.
+ * Returns the list of users
  */
 require 'database.php';
 
 $users = [];
-$sql = "SELECT id, firstname, lastname, username, password FROM users";
+$sql = "SELECT id, firstname, lastname,email, phone, username, password FROM users";
 
 if($result = mysqli_query($con,$sql))
 {
@@ -15,11 +15,13 @@ if($result = mysqli_query($con,$sql))
     $users[$i]['id']    = $row['id'];
     $users[$i]['firstname'] = $row['firstname'];
     $users[$i]['lastname'] = $row['lastname'];
+    $users[$i]['email'] = $row['email'];
+    $users[$i]['phone'] = $row['phone'];
     $users[$i]['username'] = $row['username'];
     $users[$i]['password'] = $row['password'];
     $i++;
   }
-
+ 
   echo json_encode($users);
 }
 else

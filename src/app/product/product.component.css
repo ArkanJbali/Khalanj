@@ -57,3 +57,6 @@ input[type="checkbox"]:checked + label {
   font-weight: bold;
   background-color: rgb(231, 202, 202);
 }
+.price{
+  text-decoration: line-through solid;
+}

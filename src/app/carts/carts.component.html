@@ -1,4 +1,84 @@
+<p style="margin-top: 10%;">
 
-<p style="margin-top: 8%;">
-  carts works!
-</p>
+  </p>
+  <div align="center" class="headers">
+    <h6>Your Cart</h6>
+  </div>
+  <br>
+  <div  align="center">
+      <app-alerts></app-alerts>
+
+     <mat-card>
+
+
+          <mat-table #table [dataSource]="carts" matSort class='table'>
+          <ng-container matColumnDef="items">
+            <mat-header-cell *matHeaderCellDef  mat-sort-header></mat-header-cell>
+            <mat-cell *matCellDef="let e"  colspan="4" width="50%">
+
+                    <img width="50px" hight="100px" src="data:image/jpeg;base64,{{e.productimg}}" style="margin-right: 5%;">
+
+              <span class="info totalTxt">{{e.productname}} </span>
+            </mat-cell>
+          </ng-container>
+
+
+          <ng-container matColumnDef="QUANTITY">
+              <mat-header-cell *matHeaderCellDef  mat-sort-header>QUANTITY</mat-header-cell>
+              <mat-cell *matCellDef="let e">
+                  <button (click)="decr();" class="btn btn-light"> - </button>
+                  <input matInput type="number" min="0" max="100" step="1"
+                  style="width:20%; font-size: 15px;" [(value)]="values" (keyup)="ss($event)">
+                  <button (click)="incr();" class="btn btn-light"> + </button>
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="TOTAL">
+                <mat-header-cell *matHeaderCellDef  mat-sort-header>TOTAL</mat-header-cell>
+                <mat-cell *matCellDef="let e">
+                    <span class="info totalTxt">{{e.discount}} $ </span>
+                </mat-cell>
+              </ng-container>
+
+            <ng-container matColumnDef="operation">
+              <mat-header-cell *matHeaderCellDef></mat-header-cell>
+              <mat-cell *matCellDef="let row">
+                <span>
+                <a (click)="deleteUser(row.cartid)" style="color: lightcoral;">
+                    <i class="material-icons">close</i>Remove
+                </a>
+              </span>
+              </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="loading">
+              <mat-footer-cell *matFooterCellDef colspan="6">
+                Loading Data...
+              </mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="noData">
+              <mat-footer-cell *matFooterCellDef colspan="6">
+                No Data.
+              </mat-footer-cell>
+            </ng-container>
+          <mat-header-row *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
+          <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+
+        </mat-table>
+    </mat-card>
+    <div class="container" style="margin-left:14%" align="left">
+      <div class="row">
+        <div class="col">
+        <button type="button" id="btn" class="btn btn-outline-success" (click)="calculateTot();">
+            Update Cart
+        </button>
+        <button type="button" id="btn" class="btn btn-outline-primary">
+           Checkout ->
+        </button>
+      </div>
+      <div class="col-6">
+        <span class="totalTxt"> Subtotal: <span style="margin-left:5%"> </span>  {{subtotal}} $ </span> <br>
+        <span class="taxTxt"> Tax include and shipping calculated at checkout </span> <br>
+      </div>
+      </div>
+    </div>
+  </div>

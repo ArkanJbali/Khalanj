@@ -5,23 +5,36 @@
   <h6>{{catTitle}} Collection</h6>
 </div>
 <br>
-
-   <mat-card *ngIf="_catTitle != ''" >
+<div  align="center">
+   <mat-card *ngIf="_catTitle != ''">
         <div>
-            <strong style="font-size: 20px;">Actions Log</strong>
+            <strong style="font-size: 20px;">Catalog</strong>
         </div>
 
-        <mat-table #table [dataSource]="products" matSort class='table'>
+        <mat-table #table [dataSource]="_products" matSort class='table'>
         <ng-container matColumnDef="items">
           <mat-header-cell *matHeaderCellDef  mat-sort-header>Items:</mat-header-cell>
-          <mat-cell *matCellDef="let e">{{e.productid}} <br> {{e.productname}}</mat-cell>
+          <mat-cell *matCellDef="let e">
+              <div class="box"  (click)="onPreview(e);">
+                  <img width="200px" hight="300px" src="data:image/jpeg;base64,{{e.productimg}}">
+                    <div class="text">
+                        <span style="size: 8px;">Save: 10%</span>
+                    </div>
+                </div>
+            <span class="info">{{e.productid}} <br> {{e.productname}} </span>
+          </mat-cell>
         </ng-container>
 
           <ng-container matColumnDef="edit">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let row">
               <span *ngIf= " havePermission ">
-              <button mat-icon-button (click)="onEdit(row)"><mat-icon>launch</mat-icon></button>
+              <button type="button" id="btn" class="btn btn-outline-primary" (click)="onPreview(row)">
+                Preview
+              </button><br>
+              <button type="button" id="btn" class="btn btn-primary" (click)="addToCart(row.productid)">
+                  Add to cart
+                </button>
             </span>
             </mat-cell>
           </ng-container>
@@ -43,8 +56,9 @@
           </mat-footer-row> -->
       </mat-table>
 
-     <mat-paginator   [pageSize]="5" [pageSizeOptions]="[3, 5, 10]">
+     <mat-paginator  #paginator [pageSize]="3" [pageSizeOptions]="[3, 5, 10]">
       </mat-paginator>
 
 
   </mat-card>
+</div>

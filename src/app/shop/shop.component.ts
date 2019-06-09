@@ -18,10 +18,10 @@ export class ShopComponent implements OnInit {
   category = '';
   constructor(private authenticationService: AuthenticationService,
               private userService: UserService) {
-                this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
-                  this.currentUser = user[0];
-              });
-                this.CheckUser = this.currentUser.firstname;
+              //   this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
+              //     this.currentUser = user[0];
+              // });
+               // this.CheckUser = this.currentUser.firstname;
                }
 
                ngOnInit() {
@@ -33,7 +33,7 @@ export class ShopComponent implements OnInit {
       this.scrollWin();
     }
     scrollWin() {
-      window.scrollBy(0, 300);
+      window.scrollBy(0, 500);
     }
     scrollUp() {
       window.scrollTo(0, 0);

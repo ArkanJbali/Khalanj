@@ -78,3 +78,6 @@ footer.page-footer {
     0 0 8vw white;
 
 }
+.discount{
+  text-decoration: line-through solid;
+}

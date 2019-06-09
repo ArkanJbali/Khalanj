@@ -10,10 +10,22 @@ if(isset($postdata) && !empty($postdata))
   $request = json_decode($postdata);
   $username = mysqli_real_escape_string($con, trim($request->username));
   $password = mysqli_real_escape_string($con, trim($request->password));
-  $sql = "SELECT username, password FROM users where username = '{$username}' and password '{$password}' ";
+  $users = [];
+  $sql = "SELECT * FROM users where `username` = '{$username}' and `password` = '{$password}' ";
   if($result = mysqli_query($con,$sql))
-{
-    http_response_code(204);
+  {
+   $i = 0;
+  while($row = mysqli_fetch_assoc($result))
+  {	
+    $users[$i]['id']  = $row['id'];
+    $users[$i]['firstname'] = $row['firstname'];
+    $users[$i]['lastname'] = $row['lastname'];
+    $users[$i]['username'] = $row['username'];
+    $users[$i]['password'] = $row['password'];
+	$users[$i]['token'] = $row['token'];
+    $i++;
+  }
+  echo json_encode($users);
   }else {
     http_response_code(404);
   }

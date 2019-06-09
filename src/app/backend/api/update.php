@@ -10,8 +10,7 @@ if(isset($postdata) && !empty($postdata))
   $request = json_decode($postdata);
 
   // Validate.
-  if(trim($request->firstname) === '' || trim($request->username) === '' ||
-  (float)$request->amount < 0 || sizeof($request->password) < 6)
+  if(trim($request->firstname) === '' || trim($request->username) === '')
   {
     return http_response_code(400);
   }
@@ -20,11 +19,13 @@ if(isset($postdata) && !empty($postdata))
   $id    = mysqli_real_escape_string($con, (int)$request->id);
   $firstname = mysqli_real_escape_string($con, trim($request->firstname));
   $lastname = mysqli_real_escape_string($con, trim($request->lastname));
+  $email = mysqli_real_escape_string($con, trim($request->email));
+  $phone = mysqli_real_escape_string($con, trim($request->phone));
   $username = mysqli_real_escape_string($con, trim($request->username));
   $password = mysqli_real_escape_string($con, trim($request->password));
 
   // Update.
-  $sql = "UPDATE `users` SET `firstname`='$firstname',`lastname`='$lastname',`username`='$username',`password`='$password'
+  $sql = "UPDATE `users` SET `firstname`='$firstname',`lastname`='$lastname',`email`='$email',`phone`='$phone',`username`='$username',`password`='$password'
    WHERE `id` = '{$id}' LIMIT 1";
 
   if(mysqli_query($con, $sql))
