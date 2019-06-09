@@ -1,3 +1,4 @@
+import { CheckoutComponent } from './checkout/checkout.component';
 import { ShopListComponent } from './shop-list/shop-list.component';
 import { ProductComponent } from './product/product.component';
 import { AdminComponent } from './admin/admin.component';
@@ -14,7 +15,7 @@ import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
 { path: 'home', component: HomePageComponent },
-{ path: 'map', component: MapPageComponent, canActivate: [AuthGuard] },
+{ path: 'map', component: MapPageComponent },
 { path: 'about', component: AboutPageComponent },
 { path: 'login', component: LoginComponent },
 { path: 'carts', component: CartsComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' },
 { path: 'register', component: RegisterComponent },
 { path: '', component: HomePageComponent },
 { path: 'shop', component: ShopComponent },
+{ path: 'checkout', component: CheckoutComponent },
 { path: 'shoplist', component: ShopListComponent },
 { path: '**', redirectTo: 'HomePageComponent' }];
 

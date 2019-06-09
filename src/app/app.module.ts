@@ -32,6 +32,7 @@ import {MatButtonModule, MatSnackBarModule} from '@angular/material';
 import { DialogAdminComponent } from './admin/dialog-admin/dialog-admin.component';
 import { ProductComponent } from './product/product.component';
 import { ShopListComponent } from './shop-list/shop-list.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,8 @@ import { ShopListComponent } from './shop-list/shop-list.component';
     ShopComponent,
     DialogAdminComponent,
     ProductComponent,
-    ShopListComponent
+    ShopListComponent,
+    CheckoutComponent
   ],
   imports: [
     MatButtonModule,

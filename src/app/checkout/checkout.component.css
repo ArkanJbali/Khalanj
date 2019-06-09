@@ -1,0 +1,20 @@
+#info-block section {
+  border: 1px solid rgb(155, 155, 156);
+  background: white;
+  margin: 10%;
+   width: 80%;
+}
+
+.file-marker > div {
+  padding: 0 3px;
+  height: 120px;
+  margin-top: -0.8em;
+
+}
+.box-title {
+  background: white none repeat scroll 0 0;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0 2px;
+  margin-left: 45%;
+}

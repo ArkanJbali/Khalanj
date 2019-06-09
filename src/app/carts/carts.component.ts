@@ -20,6 +20,7 @@ export class CartsComponent implements OnInit {
   quanityF: FormGroup;
   values: any = 1;
   carts;
+  sum = 0;
   constructor(private productsService: ProductsService,
               private router: Router,
               private alertService: AlertService) { }
@@ -36,7 +37,7 @@ export class CartsComponent implements OnInit {
     });
 
   }
-  deleteUser(id) {
+  deleteCart(id) {
     this.productsService.deleteFromCart(id).subscribe((cart: ToCart) => {
       console.log('Cart deleted, ' , cart);
       setTimeout(() => {
@@ -48,8 +49,10 @@ export class CartsComponent implements OnInit {
   }
   calculateTot() {
     for (let i = 0; i < this.carts.length; i++) {
-      this.subtotal += Number(this.carts[i].discount);
+     this.sum += Number(this.carts[i].discount);
     }
+    this.subtotal = this.sum;
+    this.sum = 0;
     console.log(this.subtotal);
   }
   ss(event: any) {
