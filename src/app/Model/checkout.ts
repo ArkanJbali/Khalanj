@@ -11,5 +11,6 @@ export class Checkout {
   mm: number;
   yy: number;
   securitycode: number;
-  status?: string;
+  status?: number;
+  cost?: number;
 }

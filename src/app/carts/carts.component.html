@@ -71,7 +71,7 @@
         <button type="button" id="btn" class="btn btn-outline-success" (click)="calculateTot();">
             Update Cart
         </button>
-        <button type="button" id="btn" class="btn btn-outline-primary" href="/checkout">
+        <button type="button" id="btn" class="btn btn-outline-primary" (click)="scrollWin()">
            Checkout ->
         </button>
       </div>
@@ -82,5 +82,5 @@
       </div>
     </div>
   </div>
-
-  <app-checkout></app-checkout>
+<p style="margin-top: 15%"></p>
+  <app-checkout [sum]="subtotal" *ngIf="checkout" ></app-checkout>

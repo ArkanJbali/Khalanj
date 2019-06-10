@@ -31,7 +31,7 @@
 
     <div class="form-group">
       <label for="Email">Email</label>
-      <input type="email" class="form-control" formControlName="email" id="Email" placeholder="Email" 
+      <input type="email" class="form-control" formControlName="email" id="Email" placeholder="Email"
       [ngClass]="{ 'is-invalid': submitted && f.email?.errors }" />
       <div *ngIf="submitted && !!f.email.errors" class="invalid-feedback">
           <div *ngIf="!!f.email.errors.required">Email is required</div>
@@ -85,7 +85,7 @@
     <div class="form-group col-md-4">
       <label for="State">State</label>
       <select id="State" class="form-control" formControlName="state" >
-      <!-- <select id="State" class="form-control" formControlName="state" 
+      <!-- <select id="State" class="form-control" formControlName="state"
       [ngClass]="{ 'is-invalid': submitted && f.state?.errors }" /> -->
       <!-- <div *ngIf="submitted && !!f.state.errors" class="invalid-feedback">
           <div *ngIf="!!f.state.errors.required">State is required</div>
@@ -373,7 +373,7 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="cardNumber">Card Number</label>
-      <input type="text" class="form-control" id="cardNumber"  formControlName="cardno"
+      <input type="password" class="form-control" id="cardNumber"  formControlName="cardno"
       [ngClass]="{ 'is-invalid': submitted && f.cardno?.errors }" />
       <div *ngIf="submitted && !!f.cardno.errors" class="invalid-feedback">
           <div *ngIf="!!f.cardno.errors.required">Card Number is required</div>
@@ -426,4 +426,5 @@
     </p>
   </div>
 </form>
+<app-alerts></app-alerts>
 </div>

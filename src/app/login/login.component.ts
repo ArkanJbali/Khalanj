@@ -58,12 +58,17 @@ onSubmit() {
         .pipe(first())
         .subscribe(
             data => {
+              if (data) {
                this.alertService.success('Login successful', true);
+               console.log(data);
                setTimeout(() => {
                   this.router.navigate([this.returnUrl]);
                 },
                 2000);
-
+              } else {
+                this.alertService.error('Invalid Username or Password !');
+                this.loading = false;
+              }
             },
             error => {
                 this.alertService.error('Invalid Username or Password !');

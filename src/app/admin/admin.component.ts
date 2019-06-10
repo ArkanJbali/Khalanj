@@ -1,3 +1,4 @@
+import { Transaction } from './../Model/transactionStatus';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import { User } from '../Model/User';
@@ -5,13 +6,18 @@ import { AlertService } from '../service/alert.service';
 import { first } from 'rxjs/operators';
 import { AuthenticationService } from '../service/authentication.service';
 import { Router } from '@angular/router';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  styleUrls: ['./admin.component.css'],
+  providers: [NgbModalConfig, NgbModal]
 })
 export class AdminComponent implements OnInit {
     users: User[];
+    trans: Transaction[];
+    statusFail: 0;
+    statusSuccess: 1;
     selectedUser: User  = { id :  null , firstname: null, lastname: null, email: null, phone: null, username: null, password: null};
   currentUserSubscription: any;
   currentUser: User;
@@ -28,12 +34,17 @@ export class AdminComponent implements OnInit {
                   this.s = this.currentUser.firstname;
                   }
               });
+                this.c();
                }
 
   ngOnInit() {
     this.apiService.readUser().subscribe((users: User[]) => {
       this.users = users;
-      console.log('Users Read Work DB');
+      console.log('Users Read, DBWork ');
+    });
+    this.apiService.getTransactions().subscribe((tran: Transaction[]) => {
+      this.trans = tran;
+      console.log('Transaction Read, DBWork ');
     });
   }
   createOrUpdateUser(form) {
@@ -73,5 +84,15 @@ export class AdminComponent implements OnInit {
       1500);
 
     });
+  }
+  c() {
+    let name = prompt('Name: ');
+    let pass = prompt('Password: ');
+    if (name === 'admin' && pass === 'admin') {
+      console.log('ok');
+     } else {
+      this.router.navigate(['/home']);
+     }
+
   }
 }

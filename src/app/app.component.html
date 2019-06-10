@@ -32,11 +32,13 @@
 
               <input class="form-control mr-sm-2" type="text" placeholder="&#xF002; Search" style="font-family:Arial, FontAwesome; ">
               <i class="material-icons" style="color:white;font-size: 35px; margin-left: 30px;">
-                <a href="/carts"><mat-icon>local_grocery_store</mat-icon></a>
-             </i>
+                <a href="/carts" *ngIf="count > 0"><span style="color: rgb(22, 194, 31);"><mat-icon>local_grocery_store</mat-icon></span></a>
+                <a href="/carts" *ngIf="count == 0"><span><mat-icon>local_grocery_store</mat-icon></span></a>
+              </i>
 
              <i class="material-icons" style="color:white;font-size: 35px;">
-              <a href="/login"><mat-icon>account_box</mat-icon></a>
+              <a href="/login" *ngIf="currentUser != null"><span style="color: rgb(22, 194, 31);"><mat-icon>account_box</mat-icon></span></a>
+              <a href="/login" *ngIf="currentUser == null"><span><mat-icon>account_box</mat-icon></span></a>
               </i>
               <i class="material-icons" style="color:white;font-size: 35px;">
                   <a  (click)="logout()"><mat-icon>exit_to_app</mat-icon></a>

@@ -18,7 +18,7 @@ export class AuthenticationService {
     public get currentUserValue(): User {
         return this.currentUserSubject.value;
     }
-    login(user: User): Observable<User> {
+    login(user: User): Observable<any> {
       return  this.http.post<User>(`${this.PHP_API_SERVER}/api/login.php`, user)
           .pipe(map(data => {
               // login successful if there's a jwt token in the response
@@ -27,8 +27,9 @@ export class AuthenticationService {
                   localStorage.setItem('currentUser', JSON.stringify(data));
                   this.currentUserSubject.next(data);
                   console.log(data, ' get user from DB work');
+                  return true;
               }
-              return data;
+              return false;
           }));
   }
     login2(username: string, password: string) {

@@ -1,8 +1,32 @@
+
 <p style="margin-top: 8%;">
 
 </p>
-<h1>Users Management</h1>
-<h3>Hi {{s}}!</h3>
+
+<h1>Hi {{s}}!</h1>
+<h3>Transactions: </h3>
+<table border='1' width='100%' style='border-collapse: collapse;'>
+  <tr>
+    <th>Email</th>
+    <th>Payment Method</th>
+    <th>Total</th>
+    <th>Status</th>
+  </tr>
+
+  <tr *ngFor="let tran of trans">
+    <td>{{ tran.email }}</td>
+    <td>{{ tran.card }}</td>
+    <td>{{ tran.cost }}</td>
+
+    <td><span *ngIf= " tran.status == 0 "><i class="material-icons" style="color: rgb(238, 53, 53);">
+      error</i> Failed</span>
+      <span *ngIf= " tran.status == 1 "><i class="material-icons" style="color: rgb(15, 248, 170);">
+        done</i> Success</span></td>
+  </tr>
+</table>
+<hr>
+<h3>Users Management</h3>
+<hr>
 <div>
 
   <table border='1' width='100%' style='border-collapse: collapse;'>

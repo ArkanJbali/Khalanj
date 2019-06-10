@@ -1,3 +1,4 @@
+import { Transaction } from './../Model/transactionStatus';
 import { RegisterComponent } from './../register/register.component';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -18,6 +19,9 @@ export class ApiService {
 
   readUser(): Observable<User[]> {
     return this._http.get<User[]>(`${this.PHP_API_SERVER}/api/read.php`);
+  }
+  getTransactions(): Observable<Transaction[]> {
+    return this._http.get<Transaction[]>(`${this.PHP_API_SERVER}/api/get_transaction.php`);
   }
   createUser(user: User): Observable<User> {
     console.log(user, 'Inside createUser service');

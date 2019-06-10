@@ -3,7 +3,7 @@ import { ToCart } from './../Model/toCart';
 import { ProductsService } from './../service/products.service';
 import { Router } from '@angular/router';
 import { shopProducts } from './../Model/shopProducts';
-import { Component, OnInit, SimpleChanges, SimpleChange, Input } from '@angular/core';
+import { Component, OnInit, SimpleChanges, SimpleChange, Input, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { AlertService } from '../service/alert.service';
 import { first } from 'rxjs/operators';
@@ -21,6 +21,7 @@ export class CartsComponent implements OnInit {
   values: any = 1;
   carts;
   sum = 0;
+  checkout = false;
   constructor(private productsService: ProductsService,
               private router: Router,
               private alertService: AlertService) { }
@@ -37,6 +38,9 @@ export class CartsComponent implements OnInit {
     });
 
   }
+  uSubTotal(tot) {
+    // this.subtotal = tot;
+  }
   deleteCart(id) {
     this.productsService.deleteFromCart(id).subscribe((cart: ToCart) => {
       console.log('Cart deleted, ' , cart);
@@ -46,6 +50,13 @@ export class CartsComponent implements OnInit {
       1500);
 
     });
+  }
+  ngOnDestroy() {
+    this.checkout = false;
+  }
+  scrollWin() {
+    this.checkout = true;
+    window.scrollBy(0, 700);
   }
   calculateTot() {
     for (let i = 0; i < this.carts.length; i++) {
